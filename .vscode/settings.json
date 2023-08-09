@@ -1,5 +1,6 @@
 {
-    "cSpell.words": [
-        "leftsidebar"
-    ]
+  "cSpell.words": ["leftsidebar"],
+  "workbench.colorCustomizations": {
+    "tab.activeBorder": "#0005BC"
+  }
 }

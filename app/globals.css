@@ -19,9 +19,9 @@
   }
 
   /* No Result */
-  .no-result {
+  /* .no-result {
     @apply text-center !text-base-regular text-light-3;
-  }
+  } */
 
   /* Community Card */
   .community-card {
