@@ -64,3 +64,62 @@ export async function fetchThreads(pageNumber = 1, pageSize = 20) {
     throw new Error(`Error fetching threads: ${err.message}`);
   }
 }
+
+export async function fetchThread(id: string) {
+  try {
+    connectToDb();
+
+    const thread = await Thread.findById(id)
+      .populate({ path: "author", model: User })
+      .populate({
+        path: "children",
+        populate: [
+          {
+            path: "author",
+            model: User,
+            select: "_id id name parentId image",
+          },
+          {
+            path: "children",
+            model: Thread,
+            populate: {
+              path: "author",
+              model: User,
+              select: "_id id name parentId image",
+            },
+          },
+        ],
+      })
+      .exec();
+
+    return thread;
+  } catch (err: any) {
+    throw new Error(`Error fetching thread: ${err.message}`);
+  }
+}
+
+export async function addCommentToThread(
+  treadId: string,
+  commentText: string,
+  userId: string,
+  path: string
+) {
+  try {
+    connectToDb();
+    const origianlThread = await Thread.findById(treadId);
+    if (!origianlThread) return; 
+    
+    const newThread = new Thread({text: commentText, author: userId, parentId: treadId});
+    
+    const savedComment = await newThread.save();
+
+    origianlThread.children.push(savedComment._id);
+    await origianlThread.save();
+   
+      
+    
+
+  } catch (err: any) {
+    throw new Error(`Error adding comment to thread: ${err.message}`);
+  }
+}
