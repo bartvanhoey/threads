@@ -46,7 +46,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
     defaultValues: {
       profile_photo: user?.image || "",
       name: user?.name || "",
-      username: user?.username || "",
+      username: user?.username ? user.username : "",
       bio: user?.bio || "",
     },
   });

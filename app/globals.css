@@ -4,19 +4,19 @@
 
 @layer components {
   /* main */
-  .main-container {
+  /* .main-container {
     @apply flex min-h-screen flex-1 flex-col items-center bg-dark-1 px-6 pb-10 pt-28 max-md:pb-32 sm:px-10;
-  }
+  } */
 
   /* Head Text */
-  .head-text {
+  /* .head-text {
     @apply text-heading2-bold text-light-1;
-  }
+  } */
 
   /* Activity */
-  .activity-card {
+  /* .activity-card {
     @apply flex items-center gap-2 rounded-md bg-dark-2 px-7 py-4;
-  }
+  } */
 
   /* No Result */
   /* .no-result {
@@ -38,17 +38,17 @@
   } */
 
   /* User card */
-  .user-card {
+  /* .user-card {
     @apply flex flex-col justify-between gap-4 max-xs:rounded-xl max-xs:bg-dark-3 max-xs:p-4 xs:flex-row xs:items-center;
-  }
+  } */
 
-  .user-card_avatar {
+  /* .user-card_avatar {
     @apply flex flex-1 items-start justify-start gap-3 xs:items-center;
-  }
+  } */
 
-  .user-card_btn {
+  /* .user-card_btn {
     @apply h-auto min-w-[74px] rounded-lg bg-primary-500 text-[12px] text-light-1 !important;
-  }
+  } */
 
   .searchbar {
     @apply flex gap-1 rounded-lg bg-dark-3 px-4 py-2;
